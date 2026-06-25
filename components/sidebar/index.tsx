@@ -1,7 +1,7 @@
 import { Sheet, SheetTrigger, SheetContent} from "@/components/ui/sheet"
 import { Button } from "../ui/button"
 import Link from "next/link"
-import { Home, Package, PanelBottom, Settings2, ShoppingBag, User } from "lucide-react"
+import { Home, LogOut, Package, PanelBottom, Settings2, ShoppingBag, User } from "lucide-react"
 import { TooltipProvider, TooltipTrigger, Tooltip, TooltipContent } from "../ui/tooltip"
 export function Sidebar() {
   return (
@@ -9,7 +9,7 @@ export function Sidebar() {
 
 
 <aside 
-className="fixed inset-y-0 lefet-0 z-10 hidden w-14 border-r bg-background sm:flex" 
+className="fixed inset-y-0 left-0 z-10 hidden w-14 border-r bg-background sm:flex flex-col" 
 >
 <nav className="flex flex-col items-center gap-4 px-2 py-5"> 
      <TooltipProvider>
@@ -95,8 +95,24 @@ className="fixed inset-y-0 lefet-0 z-10 hidden w-14 border-r bg-background sm:fl
         </Tooltip>
 
         </TooltipProvider>
-
-
+</nav>
+<nav className="mt-auto flex flex-colitems-center gap-4 px-2 py-5" >
+    <TooltipProvider>
+    <Tooltip>
+            <TooltipTrigger asChild>
+            <Link
+        href="#"
+        className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground"
+        >
+            <LogOut className="h-5 w-5 text-red-500"/>
+            <span className="sr-only">Sair</span>
+        </Link>
+            </TooltipTrigger>
+            <TooltipContent side="right">
+                <p>Sair</p>
+            </TooltipContent>
+        </Tooltip>
+        </TooltipProvider>
 </nav>
 </aside>
     
